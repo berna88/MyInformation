@@ -1,0 +1,4 @@
+Bundle-Name: MyInformation
+Bundle-SymbolicName: com.consistent.cuervo.myinformation.portlet
+Bundle-Version: 1.0.0
+Export-Package: com.consistent.cuervo.myinformation.portlet.constants
