@@ -22,9 +22,28 @@ public class Trabajador {
 	private String centroDeTrabajo;
 	private String fechaDeIngreso;
 	private String imagenPerfil;
+	private String descripcionLugarTrabajo;
 	private ThemeDisplay themeDisplay;
 	private User user;
 	
+	
+	
+	
+	public String getDescripcionLugarTrabajo() {
+		try {
+			descripcionLugarTrabajo = (String) user.getExpandoBridge().getAttribute("Desc_Lugar_de_Trabajo");
+		} catch (Exception e) {
+			// TODO: handle exception
+			log.error("El usuario no tiene descripcion centro de trabajo"+e.getCause());
+			descripcionLugarTrabajo = "";
+		}
+		return descripcionLugarTrabajo;
+	}
+
+	public void setDescripcionLugarTrabajo(String descripcionLugarTrabajo) {
+		this.descripcionLugarTrabajo = descripcionLugarTrabajo;
+	}
+
 	public String getImagenPerfil() {
 		try {
 			imagenPerfil = user.getPortraitURL(themeDisplay);
