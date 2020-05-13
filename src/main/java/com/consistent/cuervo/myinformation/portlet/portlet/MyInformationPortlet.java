@@ -49,11 +49,11 @@ public class MyInformationPortlet extends MVCPortlet {
 			ThemeDisplay themeDisplay =(ThemeDisplay) renderRequest.getAttribute(WebKeys.THEME_DISPLAY); 
 			Trabajador trabajador = new Trabajador(user, themeDisplay);
 			if(trabajador.getUser() != null) {
-			log.info("<--- Logeado --->");
+			log.debug("<--- Logeado --->");
 			renderRequest.setAttribute("trabajador", trabajador);
 			renderRequest.setAttribute("grafica", trabajador.getGraficaRemuneracion());
 			}else {
-			log.info("<---No logeado --->");
+			log.debug("<---No logeado --->");
 			Trabajador trabajadorSinConexion = new Trabajador();
 			renderRequest.setAttribute("trabajador", trabajadorSinConexion);
 			}
